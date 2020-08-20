@@ -21,7 +21,7 @@ class ArchiverPlugin(SingletonPlugin):
     implements(IConfigurable)
 
     def configure(self, config):
-        self.site_url = config.get('ckan.site_url_internally') or config.get('ckan.site_url')
+        self.site_url = config.get('ckan.internal_site_url') or config.get('ckan.site_url')
         self.cache_url_root = config.get('ckan.cache_url_root')
 
     def notify(self, entity, operation=None):
